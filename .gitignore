@@ -32,3 +32,15 @@ lint-*.md
 web/node_modules
 web/.next
 web/out
+
+# Un-ignore test fixtures (the vault ignore patterns above are global,
+# but test/fixtures/vault/ must be tracked).
+!web/test/
+!web/test/fixtures/
+!web/test/fixtures/vault/
+!web/test/fixtures/vault/goals/
+!web/test/fixtures/vault/goals/**
+!web/test/fixtures/vault/_shared/
+!web/test/fixtures/vault/_shared/**
+!web/test/fixtures/vault/LOG.md
+!web/test/fixtures/vault/INDEX.md
