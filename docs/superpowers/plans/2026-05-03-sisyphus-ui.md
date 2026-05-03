@@ -3100,7 +3100,7 @@ Environment=PORT=3000
 Environment=HOSTNAME=0.0.0.0
 ExecStart=/usr/bin/pnpm start
 Restart=on-failure
-User=akira
+User=sisyphus
 
 [Install]
 WantedBy=multi-user.target
@@ -3123,7 +3123,7 @@ pnpm install
 pnpm dev   # http://localhost:3000
 ```
 
-Pi deployment:
+Production deployment:
 
 1. Copy this repo to `/opt/sisyphus`.
 2. `cd /opt/sisyphus/web && pnpm install && pnpm build`

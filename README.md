@@ -211,7 +211,7 @@ pnpm install
 pnpm dev   # http://localhost:3000
 ```
 
-Pi deployment (always-on LAN service):
+Production deployment (always-on LAN service):
 
 1. Copy this repo to `/opt/sisyphus`.
 2. `cd /opt/sisyphus/web && pnpm install && pnpm build`

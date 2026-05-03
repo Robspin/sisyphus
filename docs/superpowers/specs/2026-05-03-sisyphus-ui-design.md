@@ -4,7 +4,7 @@
 **Branch:** `feat/ui`
 **Status:** Design approved by user; awaiting spec review.
 
-A minimalist Next.js + shadcn UI on top of the existing Sisyphus markdown vault. The vault remains the single source of truth; the UI is a thin reader with a small set of frontmatter writes. Always-on local service on the Pi, LAN-only, no auth.
+A minimalist Next.js + shadcn UI on top of the existing Sisyphus markdown vault. The vault remains the single source of truth; the UI is a thin reader with a small set of frontmatter writes. Always-on local service, LAN-only, no auth.
 
 ---
 
@@ -61,7 +61,7 @@ sisyphus/                       # repo root, vault lives here
 
 ### 2.3 Process model
 
-- One Next.js production process on the Pi via systemd, listening on `:3000` bound to `0.0.0.0`.
+- One Next.js production process via systemd, listening on `:3000` bound to `0.0.0.0`.
 - One cron entry: `*/15 * * * * /opt/sisyphus/scripts/scheduler.sh`.
 - No DB, no cache layer, no file watcher. Every request walks the filesystem.
 
@@ -268,7 +268,7 @@ done
 
 **Properties**
 
-- No Node, no extra deps — works on the Pi out of the box.
+- No Node, no extra deps — works on standard Linux out of the box.
 - Idempotent: cron fires every 15 min but only triggers when `research_interval` has actually elapsed.
 - Per-goal failures are swallowed (`|| true`) so one broken goal doesn't kill the whole sweep.
 - The `claude -p '/research'` invocation itself appends a `[ts] research <slug>: +N sources, ~M concepts` line to `LOG.md` per existing convention; that's what the next scheduler run reads to compute "last research."
@@ -323,7 +323,7 @@ Environment=PORT=3000
 Environment=HOSTNAME=0.0.0.0
 ExecStart=/usr/bin/pnpm start
 Restart=on-failure
-User=akira
+User=sisyphus
 
 [Install]
 WantedBy=multi-user.target
