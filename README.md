@@ -199,6 +199,35 @@ The standup is intentionally short. If it starts feeling like a chore you'll ski
 
 ---
 
+## UI
+
+A minimalist Next.js + shadcn dashboard lives in `web/`. It reads the vault directly via `fs/promises` (no DB) and writes only `_goal.md` frontmatter via Server Actions. The CLI still owns standups and research runs — the UI is read-mostly.
+
+Local dev:
+
+```bash
+cd web
+pnpm install
+pnpm dev   # http://localhost:3000
+```
+
+Pi deployment (always-on LAN service):
+
+1. Copy this repo to `/opt/sisyphus`.
+2. `cd /opt/sisyphus/web && pnpm install && pnpm build`
+3. `sudo cp deploy/sisyphus-ui.service /etc/systemd/system/`
+4. `sudo systemctl enable --now sisyphus-ui`
+5. Install the cron entry from `deploy/cron.example` (`crontab -e`) — this fires `scripts/scheduler.sh` every 15 minutes, which reads each goal's `research_interval` frontmatter and runs `claude -p '/research <slug>'` when due.
+
+Tests:
+
+```bash
+cd web && pnpm test                # unit tests for lib/
+bats scripts/scheduler.bats        # scheduler shell tests
+```
+
+---
+
 ## Cost
 
 Sisyphus is designed to run cheaply on a recurring schedule.
