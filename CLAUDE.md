@@ -48,7 +48,7 @@ vault/
 
 ### Goal definition — `goals/<slug>/_goal.md`
 
-**Human-owned.** You may append a `## Suggested updates` section at the bottom for the human to review, but never modify anything above it.
+**Frontmatter is structured config and may be edited by tools** (the UI, the scheduler). **Body sections remain human-owned** — you may append a `## Suggested updates` section at the bottom for the human to review, but never modify any prose section above it.
 
 ```yaml
 ---
@@ -59,6 +59,8 @@ status: active          # active | paused | done | abandoned
 priority: 1
 created: 2026-05-03
 target_review: 2026-08-03
+standup_interval: 1d
+research_interval: 1d
 ---
 ```
 

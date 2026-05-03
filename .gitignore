@@ -6,6 +6,9 @@
 # OMC orchestration state
 .omc/
 
+# Superpowers brainstorming sessions (mockups, server state)
+.superpowers/
+
 # Obsidian (if the vault is opened in Obsidian)
 .obsidian/
 .trash/
@@ -21,3 +24,11 @@ _meta/
 LOG.md
 INDEX.md
 lint-*.md
+
+# Sisyphus runtime
+.sisyphus/
+
+# Next.js
+web/node_modules
+web/.next
+web/out
