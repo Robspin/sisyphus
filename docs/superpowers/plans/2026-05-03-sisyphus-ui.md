@@ -120,9 +120,13 @@ web/out
 
 - [ ] **Step 5: Commit**
 
+The vault directory `goals/` is gitignored on purpose ("personal data, never tracked"). Only commit `CLAUDE.md` and `.gitignore`. The edit to `goals/wealth/_goal.md` lives on disk for the scheduler and UI to read but stays untracked.
+
 ```bash
-git add CLAUDE.md goals/wealth/_goal.md .gitignore
+git add CLAUDE.md .gitignore
 git commit -m "Add per-goal cadence frontmatter and clarify tool-editable scope"
+# Verify _goal.md edit is on disk but untracked:
+grep -E "standup_interval|research_interval" goals/wealth/_goal.md
 ```
 
 ---
