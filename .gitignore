@@ -1,1 +1,23 @@
+# Editors / tooling
 .idea
+.vscode
+.DS_Store
+
+# OMC orchestration state
+.omc/
+
+# Obsidian (if the vault is opened in Obsidian)
+.obsidian/
+.trash/
+
+# --- Personal vault data ---
+# The repo tracks the framework (CLAUDE.md, README.md, slash commands, etc.).
+# A user's actual goals, sources, and journal entries are personal and never
+# get checked in. Remove these lines if you fork this repo to keep your own
+# vault under version control in a private remote.
+goals/
+_shared/
+_meta/
+LOG.md
+INDEX.md
+lint-*.md
