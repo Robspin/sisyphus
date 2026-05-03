@@ -79,7 +79,7 @@ The full operating manual for Claude lives in [`CLAUDE.md`](./CLAUDE.md).
 
 ```bash
 # Clone into your Obsidian vault root, or use as a standalone vault
-git clone https://github.com/<you>/sisyphus.git my-goals-vault
+git clone https://github.com/Robspin/sisyphus.git
 cd my-goals-vault
 
 # Initialize git tracking for your wiki
