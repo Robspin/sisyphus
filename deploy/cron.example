@@ -1,0 +1,5 @@
+# Sisyphus scheduler — checks every 15 minutes whether any active goal
+# is overdue for research, fires claude -p '/research <slug>' when so.
+# Install with: crontab -e  (paste the line below, adjust path)
+
+*/15 * * * * /opt/sisyphus/scripts/scheduler.sh
