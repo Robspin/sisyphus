@@ -19,7 +19,7 @@ export async function lastStandup(vaultPath: string, slug: string): Promise<stri
 export async function nextStandupDue(vaultPath: string, goal: Goal): Promise<string> {
   const last = await lastStandup(vaultPath, goal.slug);
   if (!last) {
-    const created = goal.frontmatter.created;
+    const created = goal.frontmatter.created as unknown;
     // gray-matter may parse YAML dates as Date objects
     return created instanceof Date ? ymd(created) : String(created);
   }

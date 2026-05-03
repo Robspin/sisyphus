@@ -53,7 +53,8 @@ export async function readProgress(vaultPath: string, slug: string): Promise<Pro
 export async function listInterviews(vaultPath: string, slug: string): Promise<Interview[]> {
   const dir = path.join(vaultPath, 'goals', slug, 'raw', 'interviews');
   if (!(await exists(dir))) return [];
-  const files = (await readdir(dir)).filter(f => f.endsWith('.md'));
+  const DATE_RE = /^\d{4}-\d{2}-\d{2}\.md$/;
+  const files = (await readdir(dir)).filter(f => DATE_RE.test(f));
   const items: Interview[] = [];
   for (const f of files) {
     const filePath = path.join(dir, f);
