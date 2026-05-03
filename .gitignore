@@ -33,6 +33,10 @@ web/node_modules
 web/.next
 web/out
 
+# Un-ignore web app source directories that match vault ignore patterns
+!web/src/
+!web/src/**
+
 # Un-ignore test fixtures (the vault ignore patterns above are global,
 # but test/fixtures/vault/ must be tracked).
 !web/test/
