@@ -62,8 +62,8 @@ export function GoalEditForm({ goal }: { goal: Goal }) {
         <Label>Research interval</Label>
         <Input name="research_interval" defaultValue={goal.frontmatter.research_interval ?? ''} />
       </div>
-      <Button type="submit" disabled={pending}>{pending ? 'Saving...' : 'Save'}</Button>
-      {error && <p className="text-sm text-red-600">{error}</p>}
+      <Button type="submit" disabled={pending}>{pending ? 'Saving…' : 'Save'}</Button>
+      {error && <p className="text-sm text-danger">{error}</p>}
     </form>
   );
 }

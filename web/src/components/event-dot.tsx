@@ -2,11 +2,11 @@ import type { CalendarEventKind } from '@/lib/types';
 import { cn } from '@/lib/utils';
 
 const COLORS: Record<CalendarEventKind, string> = {
-  'standup-done':    'bg-emerald-500',
-  'standup-missed':  'bg-red-500',
-  'standup-due':     'bg-amber-500',
-  'research-done':   'bg-blue-500',
-  'research-due':    'bg-slate-400',
+  'standup-done':    'bg-success',
+  'standup-missed':  'bg-danger',
+  'standup-due':     'bg-warning',
+  'research-done':   'bg-info',
+  'research-due':    'bg-muted-foreground/60',
 };
 
 export function EventDot({ kind }: { kind: CalendarEventKind }) {

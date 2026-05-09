@@ -10,10 +10,13 @@ export function ProvenanceBar({ extracted, inferred, ambiguous }: Props) {
   const i = (inferred / total) * 100;
   const a = (ambiguous / total) * 100;
   return (
-    <div className="flex h-1.5 w-32 overflow-hidden rounded">
-      <div className="bg-emerald-500" style={{ width: `${e}%` }} title={`extracted: ${extracted}`} />
-      <div className="bg-amber-500"   style={{ width: `${i}%` }} title={`inferred: ${inferred}`} />
-      <div className="bg-red-500"     style={{ width: `${a}%` }} title={`ambiguous: ${ambiguous}`} />
+    <div className="flex items-center gap-2">
+      <div className="flex h-1 w-24 overflow-hidden rounded-full bg-muted ring-1 ring-border">
+        <div className="bg-success transition-all" style={{ width: `${e}%` }} title={`extracted: ${extracted}`} />
+        <div className="bg-warning transition-all" style={{ width: `${i}%` }} title={`inferred: ${inferred}`} />
+        <div className="bg-danger transition-all"  style={{ width: `${a}%` }} title={`ambiguous: ${ambiguous}`} />
+      </div>
+      <span className="label-mono tabular-nums">{extracted}·{inferred}·{ambiguous}</span>
     </div>
   );
 }

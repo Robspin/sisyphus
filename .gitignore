@@ -3,6 +3,9 @@
 .vscode
 .DS_Store
 
+# Claude Code project settings (per-machine permissions)
+.claude/
+
 # OMC orchestration state
 .omc/
 
@@ -27,6 +30,10 @@ lint-*.md
 
 # Sisyphus runtime
 .sisyphus/
+
+# Local dev/debug artifacts
+.dev.log
+.curl-out/
 
 # Next.js
 web/node_modules
