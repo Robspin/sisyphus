@@ -3,8 +3,14 @@
 .vscode
 .DS_Store
 
+# Claude Code project settings (per-machine permissions)
+.claude/
+
 # OMC orchestration state
 .omc/
+
+# Superpowers brainstorming sessions (mockups, server state)
+.superpowers/
 
 # Obsidian (if the vault is opened in Obsidian)
 .obsidian/
@@ -21,3 +27,31 @@ _meta/
 LOG.md
 INDEX.md
 lint-*.md
+
+# Sisyphus runtime
+.sisyphus/
+
+# Local dev/debug artifacts
+.dev.log
+.curl-out/
+
+# Next.js
+web/node_modules
+web/.next
+web/out
+
+# Un-ignore web app source directories that match vault ignore patterns
+!web/src/
+!web/src/**
+
+# Un-ignore test fixtures (the vault ignore patterns above are global,
+# but test/fixtures/vault/ must be tracked).
+!web/test/
+!web/test/fixtures/
+!web/test/fixtures/vault/
+!web/test/fixtures/vault/goals/
+!web/test/fixtures/vault/goals/**
+!web/test/fixtures/vault/_shared/
+!web/test/fixtures/vault/_shared/**
+!web/test/fixtures/vault/LOG.md
+!web/test/fixtures/vault/INDEX.md
